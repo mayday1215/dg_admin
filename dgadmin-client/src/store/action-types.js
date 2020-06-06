@@ -1,2 +1,0 @@
-//登录
-export const USER_LOGING_SAVNE = "USER_LOGING_SAVNE"
