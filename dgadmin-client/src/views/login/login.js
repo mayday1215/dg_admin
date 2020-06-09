@@ -29,7 +29,6 @@ class Login extends Component {
   onFinish = async (value) =>{
 
     const data = await reqLogin(value.user,value.pwd)
-    console.log(data)
     if (data.status === 0){
       //登录成功
       message.success("登录成功")

@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77d6a01c-10de-40d1-8eb5-21def08ba56f" name="Default Changelist" comment="" />
+    <list default="true" id="77d6a01c-10de-40d1-8eb5-21def08ba56f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dgadmin-client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/dgadmin-client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dgadmin-client/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/dgadmin-client/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dgadmin-client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dgadmin-client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dgadmin-client/src/network/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/dgadmin-client/src/network/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dgadmin-client/src/network/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/dgadmin-client/src/network/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dgadmin-client/src/views/admin/childCom/admin-header/admin-header.js" beforeDir="false" afterPath="$PROJECT_DIR$/dgadmin-client/src/views/admin/childCom/admin-header/admin-header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dgadmin-client/src/views/admin/childCom/admin-header/admin-header.less" beforeDir="false" afterPath="$PROJECT_DIR$/dgadmin-client/src/views/admin/childCom/admin-header/admin-header.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dgadmin-client/src/views/admin/childCom/admin-header/childCom/admin-header-date.js" beforeDir="false" afterPath="$PROJECT_DIR$/dgadmin-client/src/views/admin/childCom/admin-header/childCom/admin-header-date.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +23,15 @@
   </component>
   <component name="ProjectId" id="1cwSRU3qapvWLW4bjYFYHKP8whe" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/dgadmin-client" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -39,6 +56,7 @@
       <option name="presentableId" value="Default" />
       <updated>1591438154567</updated>
       <workItem from="1591438158126" duration="48000" />
+      <workItem from="1591687172837" duration="640000" />
     </task>
     <servers />
   </component>
@@ -50,7 +68,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

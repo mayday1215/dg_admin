@@ -5,6 +5,10 @@ import "antd/dist/antd.css"
 import store from "./store";
 import {Provider} from "react-redux"
 
+import jsonP from "jsonp"
+
+
+
 
 ReactDOM.render(
   <Provider store={store}>
