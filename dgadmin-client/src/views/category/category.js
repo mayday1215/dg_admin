@@ -1,22 +1,84 @@
 import React, {Component} from 'react';
-import {Card, Button, Table, message} from 'antd';
+import {Card, Button, Table,Modal} from 'antd';
 import {PlusOutlined, ArrowRightOutlined} from "@ant-design/icons"
-import {reqCategoryList} from "../../network/api"
-
+import {reqCategoryList,reqUpdateCategroy,reqAddCategroy} from "../../network/api"
+import UpdateCategory from "./childCom/updateCategory";
+import AddCategory from "./childCom/addCategory";
 class Category extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      cateGoryList: [],
-      subCateGoryList: [],
-      isLoading: false,
-      parentId: '0',
-      subName: ''
-
+      cateGoryList: [], //一级分类
+      subCateGoryList: [], //二级分类
+      isLoading: false, //loading加载
+      parentId: '0', //请求分类id
+      subName: '', //二级分类名字
+      showStatus:0, //显示Modal状态  0  不显示  1显示修改分类   2显示添加分类
+      cateGoryName:'',
     }
   }
+  //确定更新分类
+  clickUpdateCategory =  () => {
 
+    this.from.current.validateFields().then(async values => {
+      const categoryId = this.cateGory._id
+      const categoryNam = this.from.current.getFieldValue("category")
+      const data = await reqUpdateCategroy(categoryId,categoryNam)
+      if (data.status === 0){
+        this.setState({showStatus:0})
+        this.getCateGory()
+      }
+    }).catch(err => {})
+
+
+
+
+
+
+
+  }
+  //点击确定添加
+  clickUAddCategory =  () => {
+
+   this.from.current.validateFields().then(async values => {
+     console.log(values)
+     const categoryName = values.categoryName
+     const parentId = values.parentId
+     const data =await reqAddCategroy(parentId,categoryName)
+     if (data.status === 0){
+       this.setState({showStatus:0})
+       this.getCateGory()
+       this.from.current.resetFields()
+
+     }
+   }).catch(err => {})
+
+
+
+
+
+  }
+
+  //点击取消更新和添加分类
+  handleCancel = () => {
+
+    this.setState({showStatus:0})
+
+    this.from.current.resetFields()
+
+
+  }
+  //点击显示修改分类
+  showUpdateCategory = (record) => {
+    this.setState({showStatus:1,cateGoryName:record.name})
+    this.cateGory = record
+    if (this.from){
+      this.from.current.setFieldsValue({category:record.name})
+    }
+
+
+
+  }
   //返回一级分类
   backPreCateGory = () => {
     this.setState({
@@ -60,13 +122,17 @@ class Category extends Component {
 
   componentDidMount() {
     const {parentId} = this.state
-    console.log(parentId)
     this.getCateGory()
 
   }
 
   render() {
-    const {cateGoryList, isLoading, subCateGoryList, parentId, subName} = this.state
+    const {
+      cateGoryList, isLoading, subCateGoryList, parentId,
+      subName,showStatus,cateGoryName
+    } = this.state
+    // console.log("Category渲染")
+
     const title = parentId === "0" ? "一级分类列表" : (
       (<span>
         <a onClick={this.backPreCateGory}>一级分类列表</a>
@@ -75,7 +141,9 @@ class Category extends Component {
       </span>)
     )
     const extra = (
-      <Button type="primary" icon={<PlusOutlined/>}>
+      <Button type="primary" icon={<PlusOutlined/>} onClick={() => {
+        this.setState({showStatus:2})
+      }}>
         添加
       </Button>
     )
@@ -94,7 +162,7 @@ class Category extends Component {
         key: 'address',
         width: 300,
         render: (text, record) => <span>
-          <a style={{marginRight: 20}}>修改分类</a>
+          <a style={{marginRight: 20}} onClick={() => {this.showUpdateCategory(record)}}>修改分类</a>
           {
             parentId === "0" ? <a onClick={() => {
               this.getSubCategoryList(record)
@@ -108,6 +176,7 @@ class Category extends Component {
     ];
 
     return (
+
       <div>
         <Card title={title} extra={extra}>
           <Table dataSource={parentId === "0" ? cateGoryList : subCateGoryList}
@@ -118,6 +187,25 @@ class Category extends Component {
                  loading={isLoading}
           />;
         </Card>
+        <Modal
+          title="更新分类"
+          visible={showStatus === 1}
+          onOk={this.clickUpdateCategory}
+          onCancel={this.handleCancel}
+        >
+          <UpdateCategory cateGoryName={cateGoryName} setForm={(formRef) => {this.from = formRef}}/>
+        </Modal>
+        <Modal
+          title="添加分类"
+          visible={showStatus === 2}
+          onOk={this.clickUAddCategory}
+          onCancel={this.handleCancel}
+        >
+          <AddCategory cateGoryList={cateGoryList}
+                       setForm={(formRef) => {this.from = formRef}}
+                       parentId={parentId}
+          />
+        </Modal>
       </div>
     );
   }

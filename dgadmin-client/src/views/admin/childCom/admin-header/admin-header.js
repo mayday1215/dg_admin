@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux"
 import {withRouter} from "react-router-dom"
-import {Button} from "antd"
+import {Button,Modal} from "antd"
 import AdminHeaderDate from "./childCom/admin-header-date";
 import menuList from "../../../../config/menuConfig"
 import {reqWeather} from "./../../../../network/api"
@@ -9,7 +9,7 @@ import {removeUser} from "../../../../utils/storageUtils"
 import actions from "../../../../store/action"
 import "./admin-header.less"
 
-
+const { confirm } = Modal;
 class AdminHeader extends Component {
   constructor(props) {
     super(props);
@@ -24,7 +24,6 @@ class AdminHeader extends Component {
   async componentDidMount() {
     const {city} = this.state
     const data = await reqWeather(city)
-    console.log(data)
     this.setState({
           dayPictureUrl:data.dayPictureUrl,
           weat:data.weather
@@ -59,10 +58,16 @@ class AdminHeader extends Component {
 
   //退出
   loginUp = () => {
-    removeUser("user_key")
-    this.props.removeUser()
-    // console.log(this.props.user)
+    confirm({
+      content: '确定退出吗？',
+      okText: '确定',
+      cancelText:'取消',
+      onOk:() => {
+        removeUser("user_key")
+        this.props.removeUser()
+      },
 
+    })
 
   }
 
@@ -72,7 +77,6 @@ class AdminHeader extends Component {
     const {username} = this.props.user
     const title = this.getTitle()
     const {weat,city,dayPictureUrl} = this.state
-    console.log(weat,city,dayPictureUrl)
 
     return (
       <div className="admin-header">

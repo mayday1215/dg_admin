@@ -19,13 +19,7 @@ class Login extends Component {
   }
 
   formRef = React.createRef();
-  userChange = () =>{
-    // console.log(e.target.value)
-    // console.log(this.formRef.current.getFieldValue("user"))
-  }
-  pwdChange = () =>{
-    // console.log(this.formRef.current.getFieldValue("pwd"))
-  }
+
   onFinish = async (value) =>{
 
     const data = await reqLogin(value.user,value.pwd)

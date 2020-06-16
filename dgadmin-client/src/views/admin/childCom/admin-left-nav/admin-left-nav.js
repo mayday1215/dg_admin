@@ -24,7 +24,8 @@ class AdminLeftNav extends Component {
          //多级菜单
 
          const cItme = item.children.find(citem => {
-           return citem.key === path
+           // return citem.key === path
+           return path.indexOf(citem.key) === 0
          })
          if (cItme){
           this.openKey = item.key
@@ -50,7 +51,11 @@ class AdminLeftNav extends Component {
  }
 
   render() {
-    const path = this.props.location.pathname
+    let path = this.props.location.pathname
+    // console.log(path)
+    if (path.indexOf("/product") === 0){
+      path = "/product"
+    }
 
     return (
       <div className="left-nav">

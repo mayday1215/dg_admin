@@ -2,12 +2,8 @@ import React, {Component} from 'react';
 import {HashRouter,Route,Switch} from "react-router-dom"
 import Login from "./views/login/login";
 import Admin from "./views/admin/admin";
-import {connect} from "react-redux"
-import {getUser} from "./utils/storageUtils"
-
-import actions from "./store/action"
-
-
+import {connect} from "react-redux";
+import actions from "./store/action";
 class App extends Component {
   render() {
     return (
@@ -20,6 +16,7 @@ class App extends Component {
     );
   }
 }
+
 
 export default connect(
     null,

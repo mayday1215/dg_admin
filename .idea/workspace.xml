@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="77d6a01c-10de-40d1-8eb5-21def08ba56f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dgadmin-client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/dgadmin-client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dgadmin-client/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/dgadmin-client/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dgadmin-client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dgadmin-client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dgadmin-client/src/network/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/dgadmin-client/src/network/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dgadmin-client/src/network/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/dgadmin-client/src/network/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dgadmin-client/src/views/admin/childCom/admin-header/admin-header.js" beforeDir="false" afterPath="$PROJECT_DIR$/dgadmin-client/src/views/admin/childCom/admin-header/admin-header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dgadmin-client/src/views/admin/childCom/admin-header/admin-header.less" beforeDir="false" afterPath="$PROJECT_DIR$/dgadmin-client/src/views/admin/childCom/admin-header/admin-header.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dgadmin-client/src/views/admin/childCom/admin-header/childCom/admin-header-date.js" beforeDir="false" afterPath="$PROJECT_DIR$/dgadmin-client/src/views/admin/childCom/admin-header/childCom/admin-header-date.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,6 +49,7 @@
       <updated>1591438154567</updated>
       <workItem from="1591438158126" duration="48000" />
       <workItem from="1591687172837" duration="640000" />
+      <workItem from="1591775759687" duration="369000" />
     </task>
     <servers />
   </component>
