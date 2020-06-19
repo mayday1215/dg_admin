@@ -74,3 +74,23 @@ export const reqCategoryInfo = (categoryId) => request({
 //更改上下架
 
 export const reqUpdateStatus = (productId,status) => request({url:'/manage/product/updateStatus',method:'post',data:{productId,status}})
+
+//删除照片
+export const reqDeleteImg = (name) => request({url:'/manage/img/delete',data:{name},method:"post"})
+
+
+//添加商品
+export const reqProductAdd = (product) => request({url:'/manage/product/add',method:"post",data:product})
+//修改商品
+export const reqProductUpdate = (product) => request({url:'/manage/product/update',method:"post",data:product})
+
+
+//获取角色列表
+export const reqRoleList = () => request({url:'/manage/role/list',method:'get'})
+
+
+//添加角色
+export const reqAddRole = (roleName) => request({url:'/manage/role/add',method:'post',data:{roleName}})
+
+//更改角色权限
+export const reqUpdateRole = (role) => request({url:'/manage/role/update',method:'post',data:role})

@@ -119,7 +119,12 @@ class ProductHome extends Component {
               }}>详情</a>
               <br/>
               <br/>
-              <a>修改</a>
+              <a onClick={() => {
+                this.props.history.push({
+                  pathname:"/product/addupdate",
+                  state:record
+                })
+              }}>修改</a>
           </span>)
         }
       },
@@ -141,7 +146,9 @@ class ProductHome extends Component {
       </span>
     )
     const extra = (
-      <Button type="primary" icon={<PlusOutlined/>}>
+      <Button type="primary" icon={<PlusOutlined/>} onClick={() => {
+        this.props.history.push("/product/addupdate")
+      }}>
         添加商品
       </Button>
     )
