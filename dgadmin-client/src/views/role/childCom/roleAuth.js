@@ -45,7 +45,6 @@ class RoleAuth extends Component {
     const treeData = menuList
     const {role} = this.props
     const {checkedKeys} = this.state
-    console.log(checkedKeys)
     return (
       <div>
         <Form>

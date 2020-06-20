@@ -85,7 +85,6 @@ class Role extends Component {
   render() {
 
     const {role, roles, showAddRole, isShowAuth} = this.state
-    console.log(role)
     const columns = [
       {
         title: '角色名称',

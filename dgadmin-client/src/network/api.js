@@ -94,3 +94,16 @@ export const reqAddRole = (roleName) => request({url:'/manage/role/add',method:'
 
 //更改角色权限
 export const reqUpdateRole = (role) => request({url:'/manage/role/update',method:'post',data:role})
+
+
+//获取用户列表
+export const reqUserList = () => request({url:'/manage/user/list',method:"get"})
+
+//添加用户
+export const reqUserAdd = (user) => request({url:"/manage/user/add",method:'post',data:user})
+
+//更新用户
+export const reqUserUpdate = (user) =>  request({url:"/manage/user/update",method:'post',data:user})
+
+//删除用户
+export const reqUserDelete = (userId) => request({url:'/manage/user/delete',method:'post',data:{userId}})
